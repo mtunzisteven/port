@@ -1,4 +1,4 @@
-function myLinks(){
+window.onload = function() {
 
     const links = [
                     {
