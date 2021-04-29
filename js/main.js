@@ -19,8 +19,8 @@ window.onload = function() {
         var li = document.createElement("LI");   
         var a = document.createElement("A");  
 
-        a.setAttribute.href =links[i][url];
-        a.innerHTML = links[i][label];
+        a.setAttribute.href =links[i]['url'];
+        a.innerHTML = links[i]['label'];
 
         li.appendChild(a);             
 
