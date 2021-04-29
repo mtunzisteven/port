@@ -13,7 +13,7 @@ function myLinks(){
     ]
 
      for(let i=0; i< links.length; i++){
-        liLinks += "<li><a href='links[i][url]'>links[i][label]</a></li>";
+        liLinks += "<li><a href='"+links[i][url]+"'>"+links[i][label]+"</a></li>";
     }
 
         document.getElementsById('olist').innerHTML = liLinks;
