@@ -24,7 +24,7 @@ function myLinks(){
 
         li.appendChild(a);             
 
-        ol.appendChild(node);  
+        ol.appendChild(li);  
     }
 
 }
