@@ -1,5 +1,5 @@
 function myLinks(){
-    var liLinks='';
+
     const links = [
                     {
                         label: 'Week1',
@@ -10,11 +10,21 @@ function myLinks(){
                         url: 'week2/index.html'
                     }
                 
-    ]
+    ];
 
-     for(let i=0; i< links.length; i++){
-        liLinks += "<li><a href='"+links[i][url]+"'>"+links[i][label]+"</a></li>";
+    var ol = document.getElementById("olist");
+
+    for(let i=0; i<links.length; i++){
+
+        var li = document.createElement("LI");   
+        var a = document.createElement("A");  
+
+        a.setAttribute.href =links[i][url];
+        a.innerHTML = links[i][label];
+
+        li.appendChild(a);             
+
+        ol.appendChild(node);  
     }
 
-        document.getElementById('olist').innerHTML = liLinks;
 }
