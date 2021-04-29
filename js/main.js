@@ -16,5 +16,5 @@ function myLinks(){
         liLinks += "<li><a href='"+links[i][url]+"'>"+links[i][label]+"</a></li>";
     }
 
-        document.getElementsById('olist').innerHTML = liLinks;
+        document.getElementById('olist').innerHTML = liLinks;
 }
