@@ -13,31 +13,31 @@ window.onload = function() {
     ];
 
 
-    append('olist', 'url', 'label');
+    append('olist', links);
 
 
-    const weel1 = [
+    const week1 = [
                     {
                         label: 'notes',
                         url: 'notes/'
                     }    
     ];
 
-    append('olist1', 'url', 'label');
+    append('olist1', week1);
 
 
 }
 
-function append(listId, url, label){
+function append(listId, arr){
     var ol = document.getElementById(listId);
 
-    for(let i=0; i<links.length; i++){
+    for(let i=0; i<arr.length; i++){
 
         var li = document.createElement("LI");   
         var a = document.createElement("A");  
 
-        a.href =links[i][url];
-        a.innerHTML = links[i][label];
+        a.href =arr[i]['url'];
+        a.innerHTML = arr[i]['label'];
 
         li.appendChild(a);             
 
