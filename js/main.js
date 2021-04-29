@@ -1,13 +1,13 @@
-window.onload = function() {
+function homeload() {
 
     const links = [
                     {
                         label: 'Week1',
-                        url: 'week1/'
+                        url: 'week1/index.html'
                     },
                     {
                         label: 'Week2',
-                        url: 'week2/'
+                        url: 'week2/index.html'
                     }
                 
     ];
@@ -15,11 +15,13 @@ window.onload = function() {
 
     append('olist', links);
 
+}
 
+function week1(){
     const week1 = [
                     {
                         label: 'notes',
-                        url: 'notes/'
+                        url: 'notes/index.html'
                     }    
     ];
 
