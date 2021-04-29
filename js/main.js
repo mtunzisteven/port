@@ -1,4 +1,4 @@
-function links(){
+function myLinks(){
     var liLinks='';
     const links = [
                     {
