@@ -31,12 +31,12 @@ function weeks(){
 }
 
 function append(listId, arr){
-    var ol = document.getElementById(listId);
+    let ol = document.getElementById(listId);
 
     for(let i=0; i<arr.length; i++){
 
-        var li = document.createElement("LI");   
-        var a = document.createElement("A");  
+        let li = document.createElement("LI");   
+        let a = document.createElement("A");  
 
         a.href =arr[i]['url'];
         a.innerHTML = arr[i]['label'];
@@ -45,4 +45,10 @@ function append(listId, arr){
 
         ol.appendChild(li);  
     }
+}
+
+function addNotes(){
+    let note = document.getElementById('note').value;
+
+    document.getElementById('notes').innerHTML = note;
 }
