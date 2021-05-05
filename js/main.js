@@ -17,15 +17,15 @@ function homeload() {
 
 }
 
-function week1(){
-    const week1 = [
+function weeks(){
+    const week = [
                     {
                         label: 'notes',
                         url: 'notes/index.html'
                     }    
     ];
 
-    append('olist1', week1);
+    append('olist1', week);
 
 
 }

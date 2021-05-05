@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang='en-us'>
+    <head>
+        <title>Week 2</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src='../js/main.js'></script>
+        <link rel="stylesheet" href="../css/styles.css" />
+    </head>
+    <body>
+        <h1>WDD 330 Portfolio</h1>
+
+        <h3>Notes</h3>
+        <p>
+            Week 2:
+
+similar to var, but has block scope.
+
+Const----**
+
+Has block scope.
+
+When it is used to declare variable that is a primitive data type, the value assigned to it cannot be changed. 
+In contrast, when used to declare non-primitive data types, the underlying values may be changed. The object can't
+be reasigned. 
+
+example:
+
+	const x = 10;	
+	x = 20; // Error! cannot be reasisgned
+	const arrX = [1,2,3,4];
+	arrX = []; // Error! cannot be reasigned
+	arrX[0] = 12; // [12, 2, 3, 4]
+
+If you assign a non-primitive value to a variable, it is done by reference. Any change made to the variable will cascade to the non-primitive value.
+
+example:
+
+	const y = {value:7};
+	let z = y.value; // z.value = 7, y.value = 7
+	z.value = 10; // y.value = 10 as well.
+
+Changes to the value property of z also led to changes to the value property of y.
+
+IndexOf():
+
+	Used to find the index of a character or a substring within a string. 
+	-1 is returned if the character or string doesn't appear in the string.
+
+example: 
+	const h = "Hello";
+	h.indexOf('H'); // 0
+	h.indexOf('z'); // -1
+
+Includes():
+
+	Used to find out if a character is in a certain string. 
+	Returns a boolian result
+	Alternates include: startsWith(), endsWith()
+
+example: 
+	const h = "Hello";
+	h.Includes('H'); // true
+	h.Includes('z'); // false
+
+
+Template Literals----**
+
+Use the back tick in place of quotes: `Hello` insted of "Hello" or 'Hello'
+Both single and double quotes can be used within them.
+Expressions can also be used without requiring concatination.
+
+Example:
+	let c = `Siri's dad`;
+	let age = 39;
+	`Hello $(c)!`; // "Hello Siri's dad!"
+	`Age is $(age -7)`; // "Age is 32"
+	
+Template literals can also contain line breaks
+
+Example: 
+	`My name is...
+
+
+	 my name is...
+
+
+	 Slime Biscuit!`  // "My name is...\n\n my name is...\n\n Slime Biscuit"
+
+To use a back tick within backticks, it must be escaped: 
+
+	`This character, \`, is a backtick` // "This character, `, is a backtick" 
+	
+checking if value is a number: Use isFinite() which returns true or false
+
+Example:
+	let actual_number = 4;
+	let non_number = "4";
+
+	Number.isFinite(actual_number); // true
+	Number.isFinite(non_number); // false
+	Number.isNaN(actual_number); // false
+	Number.isNaN(non_number); // true
+
+
+Type Conversion----**
+
+We can convert non_number to a number using number() as follows: number(non_number); // 4
+If a string cannot be converted by number(), it returns "NaN": number("four"); // NaN
+Other methods to conver non_number would be as follows:
+
+	let non_numberTO_number = + non_number ; // 4
+	let non_numberTO_number = non_number * 1 // 4
+
+Converting from a number to a string:
+
+	let number_to_string = actual_number + ''; // '4'
+	actual_number ..toString();		   // '4'
+	String(actual_number);			   // '4'
+
+
+Parsing Numbers
+
+parseInt() can be used to convert a string representation of a number to an integer. You can specify the base of the number.
+
+	parseInt('1010',2); // converts from binary, back to decimal: 10
+
+	parseInt('omg',36); // 31912
+
+	parseInt('23',10); // 23 
+
+If a string start with a number and then has letters, parsInt() will ignore the rest and take only the numbers
+
+	const address = '221B Baker Street';
+	parseInt(address, 10); // 221
+
+parseInt() will also remove anything after the decimal:
+
+	parseInt('2.9',10); // 2
+
+Using parseFloat() on the above example yields the following results:
+
+	parseFloat('2.9',10); // 2.9
+
+
+Arrays----*
+
+	Create: 
+		const arr = [];
+		const arr = new Array(); 
+
+	add values:
+		arr[0] = 12;
+		arr[1] = 2;
+
+	create and add values simultaneously:
+		const arr = [12, 2];
+
+	remove a value:
+		delete arr[1]; // 2 deleted, its space is still available in the array, just occupied by undefined.
+			       // [12, undefined]
+
+Destructuring an Array
+	
+	const [arr1,arr2] = [[a,b,c],[1,2,3]];
+
+		arr1 // [a,b,c]
+		arr2 // [1,2,3]
+
+	const [x,y] = [1,2];
+
+		x // 1
+		y // 2
+
+	we get ability to swap values:
+		[x,y] = [y,x];
+
+		x // 2
+		y // 1
+
+pop():	
+	Remove last item, return its value, and remove its space: arr.pop()
+
+shift():
+	Remove first item, return its value, and remove its space: arr.shift()
+
+push():
+	Add item to the end and return new length of array: arr.push()
+
+unshift():
+	Add item to the begining and return new length of array: arr.unshift()
+
+concat():
+	Can be used to merge arrays
+	Example:
+		arr3 = arr1.concat(arr2);
+
+Spread Operator:
+	Can be used to merge arrays
+	Example:
+		arr4 = [...arr1...arr2];
+
+join():
+
+	Turns an array into a string with all items including the commas.
+	example:
+		const letters = [a,b,c,d,e,f];
+		letters.join(); // "a,b,c,d,e,f"
+		letters.join(" "); // "a b c d e f"
+		letter.join("-"); // "a-b-c-d-e-f"
+
+splice():
+	Replaces an item in the array with a new one and returns the removed item. array.splice(StartingIndex, ItemsRemoved, newItem); 
+	example:
+		letters.splice(0,2, "Lol"); // [Lol,Lol,c,d,e,f]
+		letters.splice(0,1, "a"); // [a,Lol,c,d,e,f]
+
+	Can also remove an item at specified index without leaving an undefined value
+	example:
+		letters.splice(1,1); // [a,c,d,e,f]
+
+slice():
+	creates a subarray by chopping off part of an array. array.splice(StartingIndex, EndingIndex+1);
+	example:
+		const new_letters = letters.slice(0,2); // [a,c]
+
+Sets----**
+
+	Similar to arrays but have elements that cannot be repeated.
+	Create:
+		const setName = new Set();
+		No literal notation to create it.
+
+	add an element:
+		setName.add(value); // single item
+		setName.add(value1).add(value2).add(value3); // multiple items
+		const setName =new Set([value1, value2, value3]); // multiple items in one go
+
+	add complete string words: Use setName.add(value) method, not const setName = new Set([value]). Otherwise the word will be broken into char elements.
+
+	sets can contain arrays as values, and those value within arrays can be identical.
+	sets do not have indexes.
+	We can use the spread operator to convert a set to an array: 
+		const arr = [...setName];	
+	We can also use Array.from to convert a set to an array: 
+		const arr = Array.from(setName);
+	We can also use a neat trick to duplicate an array without any repeated elements using a set:
+		const arr2 = [...new Set(arr1)]; // arr2 is the same as arr1, with the exception that no elements are ever repeated.
+
+size():
+	Gives the number of elements in a set
+	example: 
+		setName.size(); // integer value for number of elements
+
+has():
+	Can be used to check if a certain value is found within the set.
+	Returns true or false.
+	example:
+		setName.has('mech'); // true or false returned
+
+delete():
+	Used to delete an item in a set
+	example:
+		setName.delete(value); // returns true if successful and false if not
+
+clear():
+	Used to clear a set of all its elements
+	example:
+		setName.clear(); 
+
+MAP----**
+        </p>
+    </body>
+
+</html>
