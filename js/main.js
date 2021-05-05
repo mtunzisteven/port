@@ -25,7 +25,7 @@ function weeks(){
                     }    
     ];
 
-    append('olist1', week);
+    append('olist', week);
 
 
 }
