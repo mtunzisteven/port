@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang='en-us'>
+    <head>
+        <title>Week 2</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src='../js/main.js'></script>
+        <link rel="stylesheet" href="../css/styles.css" />
+    </head>
+    <body>
+        <h1>WDD 330 Portfolio</h1>
+        
+        <h3>Object-Methods</h3>
+        <br/>
+        <p> functions that are properties of objects are called methods</p>
+        <p> 'this' represents the object. Its value is that of the object before the dot that is used to call a method.</p>
+        <p>'object.method = something;' = 'object['method']() = something;'. </p>
+        <p>Arrow functions don't have 'this', they use hat of the outer normal function:<br/>
+        example: let person ={ name: 'Reya',<br/> lastname: 'Sunbound', <br/> <br/> 
+                    greet(){ <br/> let arrow = () => alert(this.name);<br/> arrow();<br/> }<br/> };
+        
+        <br/> 
+        person.greet(); // Reya;</p> <br/> 
+        <p>Methods are also properties and thus we have a comma after the lastname name-valu pair<br/> 
+        if a property has a name that does not conform to variable naming standards, we place it in quotes: 'brand name' : 'Coca Cola'. <br/> 
+        'brand name' has a space, therefore it doesn't conform to naming standards. We therefore should put it inside quotes.</p>
+        <p> Objects are mutable, therefore their properties and methods can be reomeve, changed, or added at any time.</p>
+        <p> Create an mepty object: 
+        const myObject = {};<br/>
+        const myObject = new object(); ===>Not recommended<br/>
+        <br/>
+        ES6 short hand:
+        const name = 'Iron Man';<br/>
+        const realName = 'Tony Stark';<br/>
+        <br/>
+        //Long way<br/>
+        const ironMan = {name:name, realName:realName);<br/><br/>
+        //Short ES6 way:<br/>
+        cosnt ironMan = {name, realName};</p>
+        <h5>Accessing Properties</h5>
+        <p> 
+        ironMan.name;<br/> 
+        ironMan['name'];===>Prefered as it has more advantages: example- ironMan['name'+' is actually '+'realName+'.']<br/>
+        // Iron Man is actually Tony Stark.<br/>
+        
+        ES6 also provides for computed property keys: insteada of name:'Jack Ryan' we can now have ['starring'+'name']:'Jack Ryan' <br/>
+        <br/>
+        We can also use a tenary operator as follows:<br/>
+        const bewitched = true;<br/>
+        const captainBritain = {name: 'Captain Britain', hero: bewitched ? false:true};<br/>
+        
+        captainBritain // [name: 'Captain Britain', hero: false]</p>
+        <p>Check if property exists in an object:<br/> 
+        'food' in capainBritain; // false<br/>
+        captainBritain.food !== undefined; // false<br/>
+        This checks if the object has the property as its own instead of inheritted: 
+        captainBritain.hasOwnProperty('food'); // false<br/></p>
+        
+        <h5>Add, Change , or Delete Properties</h5>
+        <p>Add property: captainBritain.realName = 'Stuart Baxter';<br/>
+        Change the name the same way as adding: captainBritain.realName = 'Stuart Clubbings';<br/>
+        Remove a property: delete captainBritain.realName;
+        </p>
+        
+        <h5>Objects as parameters to Functions</h5>
+        <p>
+        function greet({greeting, name, age}){<br/>
+            return `${greeting}! My name is ${name} and I am ${age} years old.`;<br/>
+        }<br/>
+        <br/>
+        Using the function: greet({greeting:'What's going dowm my man!, name: 'Steven', age: 32});<br/>
+        // 'What's going down my man! My name is Steven and I am 32 years old.'
+        </p>
+        
+        <h5>Namespacing</h5>
+        <p>It is possible to encapsulate all related functions in an object in order to avoid name collision:</p>
+        <p>const myMaths ={ <br/>
+        square(z){return z*z;},<br/>
+        add(a,b){return a+b;},<br/>
+        divide(x,y){return x/y;}<br/>
+        };<br/><br/>
+        
+        myMaths.divide(4,2); // 2 <br/>
+        myMaths.add(1,2); // 3 <br/>
+        myMaths.square(7); // 59 
+        </p>
+        
+        <h2>The DOM</h2>
+        <h5>Legacy DOM shortcut methods</h5>
+        <p>Document.body returns <body> element</p>
+        <p>Document.images returns all <img> elements</p>
+        <p>Document.links returns all <a> and <area> elements with href attribute</p>
+        <p>Document.anchors returns all <a> elements with name attribute</p>
+        <p>Document.forms returns all <form> elements</p>
+        
+        <p>
+        The returned lists above are array like, but they lack built in functions like splice, etc.<br/>
+        Example:<br/><br/>
+        for (let i=0 ; i < document.images.length ; i++) {<br/><br/>
+        
+        // do something with each image using document.images[i]<br/><br/>
+        
+        }<br/><br/>
+              
+        We can, however, turn them into array using the following ways:<br/><br/>
+        const imageArray = Array.from(document.images);<br/>
+        const imageArray = [...document.images];<br/>
+        </p>
+        
+        <h5>Query Selector</h5>
+        <p>can be used to select DOM elemts using CCS query seletors: # or .</p>
+        <p>Instead of getElementById(), we use: <br/>
+        document.querySelector('#bats');<br/>
+        // ..li class="vigilante hero" id="bats">Batman<... --> <br/><br/>
+        
+        Instead of getElementsByClass(), we use: <br/>
+        document.querySelectorAll('.hero');<br/>
+        // NodeList ['<'li class="hero">, '<'li id="bats">, '<'li class="hero">] <br/><br/>
+    </body>
+
+</html>
