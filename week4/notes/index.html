@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang='en-us'>
+    <head>
+        <title>Week 4</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src='../js/main.js'></script>
+        <link rel="stylesheet" href="../css/styles.css" />
+    </head>
+    <body>
+        <h1>WDD 330 Portfolio</h1>
+        
+        <h3>Forms</h3>
+        <br/>
+
+        <p> We can access the form in JS using the following line: const varNameForForm = document.forms['FormNameAttribute'][index];</p>
+        <p> We can add an event listener the the form using the forllowing line: varNameForForm.addEventListener('submit', functionName, false); </p>
+        <p> <strong>function</strong><br/>
+        
+            Declare function: function functionName(event) {...<br/><br/>
+
+            When a form is submitted, we use event.preventDefault(); to ensure that it doesn't get submitted. This would be beneficial in AJax submitions. 
+            This can be added inside the function which holds the code and logic for the event.
+            
+        <br/> 
+        To get an input element within the form we can use one of the two ways: <br/> 
+
+        <strong>1. </strong>let varNameForInput = varNameForForm.['inputAttrName']; <br/>
+        <strong>1. </strong>let varNameForInput = event.target.['inputAttrName']; <br/></p>p>
+
+
+            /*It is also possible to find out the index of the option that has been selected, 
+            using the selectedIndex property. For example, if a user selected 'Gotham City' 
+            from the menu, form2.city.selectedIndex would return 2 because it’s the third option 
+            in the list. This can then be used to access the actual text contained in the 
+            selected option:
+            
+            event.target.options[event.target.selectedIndex].text
+
+        <p>
+            To access checked input elements from a checkbox list:<br/>
+            let varNameForArrayOfInputs = [...event.target.['inputAttrName']].filter(box => box.checked).map(box => box.value); <br/>
+            <br/>
+
+            This uses the spread operator to turn the node list into an array. This then 
+            allows us to use the filter() method that returns an array containing only the 
+            check boxes that were checked (this is because their 'checked' property will be 
+            truthy). We then chain the map() method to the end, which replaces each checkbox 
+            in the array with its 'value' property. This array is then returned and stored 
+            in the hero.powers variable.<br /><br />
+
+        </p>
+
+    </body>
+
+</html>
