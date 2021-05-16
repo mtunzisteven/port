@@ -14,22 +14,24 @@
         <br/>
 
         <p> We can access the form in JS using the following line: const varNameForForm = document.forms['FormNameAttribute'][index];</p>
+        <br/>
+        <p>Without an index, an array of all forms in the document is returned.<br/> Forms index is based on order of appearance in the html document</p>
         <p> We can add an event listener the the form using the forllowing line: varNameForForm.addEventListener('submit', functionName, false); </p>
         <p> <strong>function</strong><br/>
         
             Declare function: function functionName(event) {...<br/><br/>
 
             When a form is submitted, we use event.preventDefault(); to ensure that it doesn't get submitted. This would be beneficial in AJax submitions. 
-            This can be added inside the function which holds the code and logic for the event.
+            This can be added inside the function which holds the code and logic for the event.<br/>
             
         <br/> 
         To get an input element within the form we can use one of the two ways: <br/> 
 
-        <strong>1. </strong>let varNameForInput = varNameForForm.['inputAttrName']; <br/>
-        <strong>1. </strong>let varNameForInput = event.target.['inputAttrName']; <br/></p>p>
+        <strong>1. </strong>let varNameForInput = varNameForForm['inputAttrName']; <br/>
+        <strong>1. </strong>let varNameForInput = event.target['inputAttrName']; <br/></p>
 
 
-            /*It is also possible to find out the index of the option that has been selected, 
+            It is also possible to find out the index of the option that has been selected, 
             using the selectedIndex property. For example, if a user selected 'Gotham City' 
             from the menu, form2.city.selectedIndex would return 2 because it’s the third option 
             in the list. This can then be used to access the actual text contained in the 
