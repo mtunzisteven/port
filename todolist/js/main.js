@@ -12,7 +12,7 @@ const todoArray = [];
 
 const todo = new Todos(todoElements); // create instance of Todo class
 
-todo.loadTodos('all', count); // display tasks
+//todo.loadTodos('all', count); // display tasks
 
 form.addEventListener('submit', function(event){
 

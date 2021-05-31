@@ -25,7 +25,6 @@ function homeload() {
                         label: 'todolist',
                         url: 'todolist/index.html'
                     }
-                
     ];
 
 
