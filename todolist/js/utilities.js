@@ -152,21 +152,22 @@ export function displayActiveTasks(todoElements, todo, count){
 
                     number-= 1;
 
+                    count.innerHTML = number;
+
                     todo[i]['completed'] = true; // remove the element in the array, but not in local storage
     
                     localStorage.setItem('tasks', JSON.stringify(todo)); // save the new array without the deleted element
 
-                    count.innerHTML = number;
-
                 }else{
 
                     number+= 1;
+
+                    count.innerHTML = number;
     
                     todo[i]['completed'] = false; // remove the element in the array, but not in local storage
     
                     localStorage.setItem('tasks', JSON.stringify(todo)); // save the new array without the deleted element
     
-                    count.innerHTML = number;
 
                 }
     
@@ -242,22 +243,23 @@ export function displayCompletedTasks(todoElements, todo, count){
     
                     number-= 1;
 
+                    count.innerHTML = number;
+
                     todo[i]['completed'] = true; // remove the element in the array, but not in local storage
     
                     localStorage.setItem('tasks', JSON.stringify(todo)); // save the new array without the deleted element
     
-                    count.innerHTML = number;
 
                 }else{
     
                     number+= 1;
 
+                    count.innerHTML = number;
+
                     todo[i]['completed'] = false; // remove the element in the array, but not in local storage
     
                     localStorage.setItem('tasks', JSON.stringify(todo)); // save the new array without the deleted element
     
-                    count.innerHTML = number;
-
                 }
     
             }, false);
