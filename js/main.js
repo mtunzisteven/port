@@ -20,6 +20,10 @@ function homeload() {
                     {
                         label: 'Week5',
                         url: 'week5/index.html'
+                    },
+                    {
+                        label: 'todolist',
+                        url: 'todolist/index.html'
                     }
                 
     ];
