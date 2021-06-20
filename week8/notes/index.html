@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang='en-us'>
+    <head>
+        <title>Notes | Week 7 </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src='../js/main.js'></script>
+        <link rel="stylesheet" href="../css/styles.css" />
+    </head>
+    <body>
+        <h1>WDD 330 Portfolio</h1>
+        
+        <h3>call() method</h3>
+        <p> Can be used to set the value of 'this' inside a function to an object that is provided as the first argument<br/>
+            Example:<br/><br/>
+            function greet(){ return `Hello, my name's ${this.name}`;}
+            <br/>
+            <br/>
+            const batman = {name : 'Bruce'};
+            const spiderman = {name : 'Peter'};
+            <br/>
+            <br/>
+            greet.call(batman); << 'Bruce'
+            <br/>
+            greet.call(spiderman): << 'Peter'
+            <br/>
+            <br/>
+            if the function had arguments, they would be added after the object argument: greet.call(spiderman, arg1, arg2...);
+            <br/>
+            if we needed to use arrays as the additional arguments, we'd use apply instead of call: greet.apply(spiderman, [arg1], [arg2]);<br/>
+            this method is not necessary in ES6 because we can simply use the spread operator to add values as arrays: greet.call(spiderman, ...[arg1], ...[arg2])
+            <br/>
+            <br/>
+            if function does not refer to an object we can still use call, place null as the first argument: functionName.call(null, arg1);
+        </p>
+        <h3>Adding Properties to Functions</h3>
+
+        <p>Once functions have been defined, properties can be added, just as in class objects: <br/><br/>
+            function naming(name){
+                return `Your name is: ${name}`;
+            }
+
+            naming.description = 'This function tells you what your name is, but you need to give it your name first :P';<br/><br/>
+        
+            naming(Steven); << Your name is: Steven<br/><br/>
+            naming.description; << 'This function tells you what your name is, but you need to give it your name first :P'
+        <br/> 
+        </p> 
+            
+        <h3>Memoization</h3>
+        
+        <p>
+
+        This technique is used to create result caching. When a funtion takes a long time complete and return a result, you can store the result so that it
+        can be used in the future for future call of the same function with the same argument value. <br/><br/>
+        example: function square(x){ <br/>
+            square.cache = square.cache || {}<br/>
+            if(!square.cache[x]){<br/>
+                square.cache[x] = x*x;<br/>
+            }<br/><br/>
+            return square.cache[x];<br/>
+        }<br/><br/>
+        square(2); << 4<br/>
+        square(3); << 9<br/>
+        square.cache; << {'2':4, '3':9}
+        </p> 
+
+       <h3>Immediately Invoked Function Expressions: IIFE(pronounced 'effy')</h3>
+        <p>
+            An anonymous function that is invoked as soon as it is defined.<br/>
+            This is done by placing parenthesis around the function and another pair after closing the parenthesis:<br/><br/>
+            (function(){ return "Howdy partner!;"})(); << 'Howdy Partner!'<br/><br/>
+            This is a great way to use variables that will only be needed once throughout the program, in order to keep namespace unpolluted.<br/><br/>
+            It is also a great way to add your code in strict mode wheere the mode of the code that already exists is unknown: <br/>
+            (function(){
+                'use strict';
+                code block...
+            })(); only the code block will be in strict mode<br/><br/>
+            IFFE can also be used to create blocks of code with their own scope within the same program so they cannot interfere with each other.
+            In ES6, there is no need for IIFE. You can simply enclose your code in curly braces and the same result is returned
+        
+        </p>
+
+        <h3>Functions that Define and Rewrite Themselves</h3>
+        <p>
+            This is done by assigning a anonymouse function to a variable with the same name as the fucntion:<br/><br/>
+            function happy(){<br/>
+                console.log('Wow this is it!');<br/>
+                happy = function(){<br/>
+                    console.log('This is happening!');<br/>
+                };<br/>
+            }<br/><br/>
+            The first call will return the initial defined value, and all subsequent calls will return the redefined value:<br/><br/>
+            happy(); << 'Wow this is it!'<br/>
+            happy(); << 'This is happening'<br/>
+            happy(); << 'This is happening'<br/><br/>
+            Any property added prior to the first call and onwards will be lost as shown below:<br/><br/>
+
+            function test(){<br/>
+                console.log('First Attempt In Learning');<br/>
+                test = function(){<br/>
+                    console.log('PASS');<br/>
+                };<br/>
+            }<br/><br/>
+            test.music = 'Opera';<br/>
+            test.music; << Opera<br/><br/>
+            test(); << 'First Attempt In Learning'<br/>
+            test.music; << undefined<br/><br/>
+            test(); << 'PASS'<br/>
+        </p>
+    </body>
+
+</html>

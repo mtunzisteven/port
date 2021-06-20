@@ -28,6 +28,14 @@ function homeload() {
                     {
                         label: 'Week7',
                         url: 'week7/index.html'
+                    },
+                    {
+                        label: 'Week8',
+                        url: 'week8/index.html'
+                    },
+                    {
+                        label: 'Week9',
+                        url: 'week9/index.html'
                     }
     ];
 
