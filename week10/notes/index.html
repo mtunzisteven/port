@@ -102,21 +102,21 @@
         <p class="examples">
             // Example POST method implementation:<br/>
             async function postData(url = '', data = {}) {<br/>
-            // Default options are marked with *<br/>
-            const response = await fetch(url, {<br/>
-                method: 'POST', // *GET, POST, PUT, DELETE, etc.<br/>
-                mode: 'cors', // no-cors, *cors, same-origin<br/>
-                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached<br/>
-                credentials: 'same-origin', // include, *same-origin, omit<br/>
-                headers: {<br/>
-                'Content-Type': 'application/json'<br/>
-                // 'Content-Type': 'application/x-www-form-urlencoded',<br/>
-                },<br/>
-                redirect: 'follow', // manual, *follow, error<br/>
-                referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url<br/>
-                body: JSON.stringify(data) // body data type must match "Content-Type" header<br/>
-            });<br/>
-            return response.json(); // parses JSON response into native JavaScript objects<br/>
+                &nbsp;// Default options are marked with *<br/>
+                &nbsp;const response = await fetch(url, {<br/>
+                    &nbsp;&nbsp;method: 'POST', // *GET, POST, PUT, DELETE, etc.<br/>
+                    &nbsp;&nbsp;mode: 'cors', // no-cors, *cors, same-origin<br/>
+                    &nbsp; &nbsp;cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached<br/>
+                    &nbsp; &nbsp;credentials: 'same-origin', // include, *same-origin, omit<br/>
+                    &nbsp;&nbsp;headers: {<br/>
+                        &nbsp;&nbsp;'Content-Type': 'application/json'<br/>
+                        &nbsp;&nbsp;// 'Content-Type': 'application/x-www-form-urlencoded',<br/>
+                        &nbsp;&nbsp;},<br/>
+                        &nbsp;&nbsp;redirect: 'follow', // manual, *follow, error<br/>
+                        &nbsp;&nbsp;referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url<br/>
+                        &nbsp;&nbsp;body: JSON.stringify(data) // body data type must match "Content-Type" header<br/>
+                        &nbsp;});<br/>
+                        &nbsp;return response.json(); // parses JSON response into native JavaScript objects<br/>
             }<br/><br/>
 
             postData('https://example.com/answer', { answer: 42 })<br/>
