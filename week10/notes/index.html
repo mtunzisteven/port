@@ -81,10 +81,23 @@
 
         <h2>Using Fetch</h2>
 
+        <h4>A basic fetch request:</h4>
+
+        <p class="examples">
+            fetch('http://example.com/movies.json')<br/>
+            .then(response => response.json())<br/>
+            .then(data => console.log(data));<br/><br/>
+
+            Here we are fetching a JSON file across the network and printing it to the console. The simplest use of fetch() takes one argument — the path to the resource you want to fetch — and returns a promise containing the response (a Response object).
+            This is just an HTTP response, not the actual JSON. To extract the JSON body content from the response, we use the json() method (defined on the Body mixin, which is implemented by both the Request and Response objects.)
+        </p>
+        
+
         <p>Supplying request options</p>
 
         <p>
-            The fetch() method can optionally accept a second parameter, an init object that allows you to control a number of different settings:
+            The fetch() method can optionally accept a second parameter, an init object that allows you to control a number of different settings:<br/><br/>
+            fetch(url, {init-object})
         </p>
         <p class="examples">
             // Example POST method implementation:<br/>
@@ -110,4 +123,13 @@
             .then(data => {<br/>
                 console.log(data); // JSON data parsed by `data.json()` call<br/>
             });<br/>
+        </p>
+
+        <p>
+            Note that mode: "no-cors" only allows a limited set of headers in the request:<br/><br/>
+
+            Accept<br/>
+            Accept-Language<br/>
+            Content-Language<br/>
+            Content-Type with a value of application/x-www-form-urlencoded, multipart/form-data, or text/plain<br/>
         </p>
