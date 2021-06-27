@@ -9,3 +9,10 @@ h1{
     color:cornsilk;
 }
 
+.examples{
+    background-color: darkgray; 
+    color:black;
+    border-radius: 3px; 
+    padding:5px;
+}
+
