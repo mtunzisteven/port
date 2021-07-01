@@ -5,109 +5,105 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script src='../js/main.js'></script>
-        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" href="/port/css/styles.css" />
     </head>
     <body>
-        <h1>WDD 330 Portfolio</h1>
+        <h1>Week 8 Notes</h1>
         
-        <h3>call() method</h3>
-        <p> Can be used to set the value of 'this' inside a function to an object that is provided as the first argument<br/>
-            Example:<br/><br/>
-            function greet(){ return `Hello, my name's ${this.name}`;}
-            <br/>
-            <br/>
-            const batman = {name : 'Bruce'};
-            const spiderman = {name : 'Peter'};
-            <br/>
-            <br/>
-            greet.call(batman); << 'Bruce'
-            <br/>
-            greet.call(spiderman): << 'Peter'
-            <br/>
-            <br/>
-            if the function had arguments, they would be added after the object argument: greet.call(spiderman, arg1, arg2...);
-            <br/>
-            if we needed to use arrays as the additional arguments, we'd use apply instead of call: greet.apply(spiderman, [arg1], [arg2]);<br/>
-            this method is not necessary in ES6 because we can simply use the spread operator to add values as arrays: greet.call(spiderman, ...[arg1], ...[arg2])
-            <br/>
-            <br/>
-            if function does not refer to an object we can still use call, place null as the first argument: functionName.call(null, arg1);
-        </p>
-        <h3>Adding Properties to Functions</h3>
 
-        <p>Once functions have been defined, properties can be added, just as in class objects: <br/><br/>
-            function naming(name){
-                return `Your name is: ${name}`;
-            }
+        <h2>Transforms</h2>
 
-            naming.description = 'This function tells you what your name is, but you need to give it your name first :P';<br/><br/>
+        <p> The CSS3 transform property lets you lets you translate, rotate, scale, and/or skew
+            any element. We use transofrm functions to manipulate the appearance of an element. The value of the transform is one or more transofrm functions seperated by spaces. The fucntions are applied in the order they appear.</p>
         
-            naming(Steven); << Your name is: Steven<br/><br/>
-            naming.description; << 'This function tells you what your name is, but you need to give it your name first :P'
-        <br/> 
-        </p> 
-            
-        <h3>Memoization</h3>
-        
-        <p>
+        <h3>translate()</h3>
+        <p> This fucntion is used to move an element along the x and y axis. It is applied as shown in the following example:</p>
+        <p class='example'> transform: translate(x,y); <br/> transform: translateX(x); <br/> transform: translateY(y);</p>
+        <p> Transforms don't work on inline elements. Convert inline elements to "inline-block".</p>
 
-        This technique is used to create result caching. When a funtion takes a long time complete and return a result, you can store the result so that it
-        can be used in the future for future call of the same function with the same argument value. <br/><br/>
-        example: function square(x){ <br/>
-            square.cache = square.cache || {}<br/>
-            if(!square.cache[x]){<br/>
-                square.cache[x] = x*x;<br/>
-            }<br/><br/>
-            return square.cache[x];<br/>
-        }<br/><br/>
-        square(2); << 4<br/>
-        square(3); << 9<br/>
-        square.cache; << {'2':4, '3':9}
-        </p> 
+        <h3>scale()</h3>
+        <p> This fucntion is used to scale an element along the x and y axis. When only one value is provided without specifying the axis, the element is scaled while the aspect ratio is maintained. The center of the element is always maintained.It is applied as shown in the following example:</p>
+        <p class='example'> transform: scale(x,y); <br/> transform: translateX(x); <br/> transform: translateY(y);<br/> transform: scale(v); <br/></p>
+                            transform: translate(x,y) scale(x,y); </p>
 
-       <h3>Immediately Invoked Function Expressions: IIFE(pronounced 'effy')</h3>
-        <p>
-            An anonymous function that is invoked as soon as it is defined.<br/>
-            This is done by placing parenthesis around the function and another pair after closing the parenthesis:<br/><br/>
-            (function(){ return "Howdy partner!;"})(); << 'Howdy Partner!'<br/><br/>
-            This is a great way to use variables that will only be needed once throughout the program, in order to keep namespace unpolluted.<br/><br/>
-            It is also a great way to add your code in strict mode wheere the mode of the code that already exists is unknown: <br/>
-            (function(){
-                'use strict';
-                code block...
-            })(); only the code block will be in strict mode<br/><br/>
-            IFFE can also be used to create blocks of code with their own scope within the same program so they cannot interfere with each other.
-            In ES6, there is no need for IIFE. You can simply enclose your code in curly braces and the same result is returned
-        
+        <h3>rotate()</h3>
+        <p> To rotate elements on their point of origin, we use the rotate function. we specify the values in degrees(deg). Positive rotates elements clock-wise, while negative rotates elements anti-clock-wise.</p>
+
+        <p> In addition to degrees, values can be provided in grads, radians, or turns</p> 
+
+        <p class='example'> transform: rotate(Vdeg); <br/> transform: rotate(Vdeg) translate(x,y) scale(V);</p>
+
+        <h3>skew()</h3>
+        <p> This fucntion is used to skew an element along the x and y axis. It is applied as shown in the following example:</p>
+        <p class='example'> transform: skew(x,y); <br/> transform: skew(x.y) rotate(Vdeg) translate(x,y) scale(V);</p>
+
+        <h3>transform-origin</h3>
+        <p> This fucntion is used to change the origin of an element. It has similar syntax as background-position property. It is applied as shown in the following example:</p>
+        <p class='example'> transform-origin: x% y%; <br/> transform: skew(x.y) rotate(Vdeg) translate(x,y) scale(V);</p>
+
+
+        <p> Transforms don't cause document reflow, therefore, none of the elements neighboring the transformed element will accomodate the transformation. Keep this in mind.</p>
+
+        <h2>Transitions</h2>
+        <p> Transitions allow the values of CSS properties to change over time. They are used to create animations. All transforms above can be animated.
+            CSS transitions are declared along with the regular styles on an element. Whenever the target properties change, the browser will apply the 
+            transition making the change gradual.
         </p>
 
-        <h3>Functions that Define and Rewrite Themselves</h3>
-        <p>
-            This is done by assigning a anonymouse function to a variable with the same name as the fucntion:<br/><br/>
-            function happy(){<br/>
-                console.log('Wow this is it!');<br/>
-                happy = function(){<br/>
-                    console.log('This is happening!');<br/>
-                };<br/>
-            }<br/><br/>
-            The first call will return the initial defined value, and all subsequent calls will return the redefined value:<br/><br/>
-            happy(); << 'Wow this is it!'<br/>
-            happy(); << 'This is happening'<br/>
-            happy(); << 'This is happening'<br/><br/>
-            Any property added prior to the first call and onwards will be lost as shown below:<br/><br/>
+        <h4>Steps to create a simple transition using only CSS:</h4>
+        <p> 1. Declare the original state of the element in the default style declaration.<br/>
+            2. Declare the final state of your transitioned element; for example, a :hover state.<br/>
+            3. Include the transition functions in your default style declaration using the<br/><br/>
+            transition properties, including: transition-property, transition-duration, transition-timing-function, 
+            and transition-delay.</p>
 
-            function test(){<br/>
-                console.log('First Attempt In Learning');<br/>
-                test = function(){<br/>
-                    console.log('PASS');<br/>
-                };<br/>
-            }<br/><br/>
-            test.music = 'Opera';<br/>
-            test.music; << Opera<br/><br/>
-            test(); << 'First Attempt In Learning'<br/>
-            test.music; << undefined<br/><br/>
-            test(); << 'PASS'<br/>
+        <h3>transition-property</h3>
+
+        <p> The transition-property property defines the CSS properties of the element that should be transitioned, with all for all properties being the default.</p>
+
+        <p>Any property changing from one value to another for which you can find a valid
+            midpoint can be transitioned. For example, in transitioning from a 1px red border
+            to a 15px blue border, we transition the color and width of the border.
         </p>
+
+        <p>
+            It is important to include a pre-state and a post-state. For example, to transition
+            from rectangular corners to rounded corners, set the original state to border-radius: 0;.
+            From the above examples, we can use it in the following way: 
+        </p>
+
+        <p class='example'> transition-property: transform; <br/>
+            transition-property: transform, color;
+        </p>
+
+        <h3>transition-duration</h3>
+
+        <p>The transition-duration property sets how long the transition will take: the
+            duration of time it takes to go from the default state to the transitioned state. You
+            can specify this either in seconds (s) or milliseconds (ms). 
+            any duration lower-than 200ms makes the website seem slow. Anything faster may be too quick to see.
+            To specify 0.2 seconds (0.2s), or 200 milliseconds (200ms) we use the following:
+        </p>
+
+        <p class='example'> transition-duration: 0.2s;</p>
+
+        <h3>transition-timing-function</h3>
+
+        <p>The transition-timing function properties set the pace of the transition. they have key therms:<br/><br/>
+            ease, linear, ease-in, ease-out, or ease-in-out. The default is ease.
+        </p>
+
+        <p class='example'> transition-timing-function: ease-out;</p>
+
+        <h3>transition-delay property</h3>
+
+        <p>The transition-delay properties is used to add a delay before a transition begins. The default
+            is 0. Use ms or s to specify the delay.
+        </p>
+
+        <p class='example'> transition-timing-function: ease-out;</p>
+
+
     </body>
 
 </html>
