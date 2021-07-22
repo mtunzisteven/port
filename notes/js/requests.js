@@ -1,6 +1,6 @@
 let url = "/notes/jsoncontroller.php";
 
-let quoteurl = "https://zenquotes.io/api/random";
+let quoteurl = "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
 
 export function signin(username,hideEl, showEl, inDivs, newNote){
 
