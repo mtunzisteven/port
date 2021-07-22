@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Home</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="https://kit.fontawesome.com/1276afdf97.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class='header'>
+            <nav>
+                <div>
+                    <a class='logo-text' href='/notes/'>NOTES</a>
+                </div>
+                <ul>
+                    <li><a href='/notes/'>Home</a></li>
+                    <li id='new-note' class='hidden'><a href='/notes/new/'>New</a></li>
+                </ul>
+            </nav>
+            <div id='hero'>
+                <h1 id='hero-quote'></h1>
+                <p id='hero-author'></p>
+
+            </div>
+        </div>
+
+        <div id='content' class='content'>
+            <h1 class='default-title'>Welcome to Notes</h1>
+
+            <div id='infodiv'></div>
+            <div class='welcome-buttons'>
+                <button id='login-button'>Sign in</button>
+                <button id='signup-button'>Sign up</button>
+            </div>
+
+            <form class='hidden' id='sign-in'>
+
+                <i id='close-signin' class='fa fa-times'></i>
+
+                <h2>Sign into Your Account</h2>
+
+                <label> Enter Your Username:
+                    <input type='text' name='userName' require />
+                </label>
+
+                <input name='submit' type='button' value='submit' />
+
+            </form>
+
+            <form class='hidden' id='sign-up'>
+
+                <i id='close-signup' class='fa fa-times'></i>
+
+                <h2>Sign up</h2>
+
+                <label> Create a Username:
+                    <input type='text' name='userName' require />
+                </label>
+
+                <input name='submit' type='button' value='submit' />
+
+            </form>
+
+        </div>
+
+        <div id='content2' class='hidden'>
+
+            <h1 class='default-title'>Your Notes</h1>
+
+            <div id='infodivb'></div>
+
+            <div id='notes-container' class='notes-container'>
+
+            </div>
+
+            <div class='welcome-buttons signout'>
+                <button id='signout-button'>Sign out</button>
+            </div>
+
+        </div>
+        
+        
+        <script type='module' src="js/main.js" ></script>
+    </body>
+</html>

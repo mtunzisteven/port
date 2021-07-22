@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>New Note</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="https://kit.fontawesome.com/1276afdf97.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class='header'>
+            <nav>
+                <div>
+                    <a class='logo-text' href='/notes/'>NOTES</a>
+                </div>
+                <ul>
+                    <li><a href='/notes/'>Home</a></li>
+                    <li><a href='/notes/new/'>New</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class='content'>
+            <h1>Add Notes</h1>
+            <form id='note-form'>
+                <label> Title:
+                    <input type='text' name='title' require />
+                </label>
+                <label>Your Notes:
+                    <textarea name='note' row='10' require></textarea>
+                </label>
+                <input type='button' name='notebutton' value='submit' />
+            </form>
+        </div>
+        
+        
+        <script type='module' src="/notes/js/newnote.js" ></script>
+    </body>
+</html>

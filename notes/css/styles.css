@@ -1,0 +1,313 @@
+/*
+*---------------------------------Website Colors
+*/
+/*
+*---------------------------------Fonts
+*/
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto:wght@300&family=Zen+Tokyo+Zoo&display=swap");
+body {
+  font: 200 15px "Roboto", sans-serif;
+  color: #3a3939;
+  margin: 0;
+}
+
+body a {
+  text-decoration: none;
+  font: 200 15px "Roboto", sans-serif;
+}
+
+body div.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body div.header div#hero {
+  min-height: 350px;
+  min-width: 100%;
+}
+
+body div.header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #008000;
+  color: #fdfdfd;
+  padding: 5px 10px;
+  height: 40px;
+}
+
+body div.header nav a.logo-text {
+  display: block;
+  font: 500 35px "Zen Tokyo Zoo", cursive;
+  min-width: 20%;
+  text-align: left;
+  color: #fbff00;
+  text-shadow: 0 1px #3a3939;
+}
+
+body div.header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: 10%;
+  padding: 0 70% 0 0;
+  margin: 0;
+}
+
+body div.header nav ul li {
+  list-style: none;
+}
+
+body div.header nav ul li a {
+  display: block;
+  color: #fbff00;
+  line-height: 40px;
+}
+
+body div.header nav ul li a:hover {
+  color: #fdfdfd;
+}
+
+body div.header nav ul li a.active {
+  color: #fdfdfd;
+}
+
+body div.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body div.content div.notes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-width: 100%;
+}
+
+body div.content div.notes-container div.note-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 5px 0 #3a3939;
+          box-shadow: 0 0 5px 0 #3a3939;
+  min-width: 20%;
+  max-width: 21%;
+  padding: 15px;
+  margin: 20px;
+}
+
+body div.content div.notes-container div.note-card div.notes {
+  font: 200 15px "Roboto", sans-serif;
+  color: #3a3939;
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+
+body div.content div.notes-container div.note-card h4.titles {
+  font: 400 30px "Indie Flower", cursive;
+  text-align: center;
+  margin: 5px 0 0 0;
+}
+
+body div.content .hidden {
+  display: none;
+}
+
+body div.content h1 {
+  text-align: center;
+}
+
+body div.content div.welcome-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: 250px;
+  max-width: 250px;
+  margin: 20px auto;
+  padding: 100px;
+  border-radius: 3px;
+  border: 1px solid #008000;
+}
+
+body div.content div.welcome-buttons button {
+  padding: 10px 20px;
+  background-color: #008000;
+  font: 200 15px "Roboto", sans-serif;
+  font-weight: 700;
+  border: none;
+  border-radius: 3px;
+  color: #fbff00;
+  -webkit-box-shadow: 0 0 5px 1px #d8d5d5;
+          box-shadow: 0 0 5px 1px #d8d5d5;
+  cursor: pointer;
+}
+
+body div.content div.welcome-buttons button:hover {
+  background-color: #fbff00;
+  color: #008000;
+}
+
+body div.content div.welcome-buttons.signout {
+  border: none;
+  padding: 0 100px;
+}
+
+body div.content div.welcome-buttons.signout button {
+  margin: 20px auto;
+}
+
+body div.content div.welcome-buttons.signout:hover {
+  border: none;
+}
+
+body div.content div.welcome-buttons:hover {
+  border: 1px solid #008000;
+}
+
+body div.content form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 50%;
+  margin: 10px auto;
+}
+
+body div.content form i.fa {
+  min-width: 100%;
+  text-align: right;
+  color: #008000;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+body div.content form i.fa:hover {
+  color: #fbff00;
+}
+
+body div.content form label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 15px;
+}
+
+body div.content form input[type=button] {
+  background-color: #fbff00;
+  color: #008000;
+  font: 200 15px "Roboto", sans-serif;
+  font-weight: 600;
+  border: none;
+  max-width: 250px;
+  border-radius: 5px;
+  margin: 40px auto 0 auto;
+  padding: 5px 20px;
+  -webkit-box-shadow: 0 0 3px 1px #3a3939;
+          box-shadow: 0 0 3px 1px #3a3939;
+  cursor: pointer;
+}
+
+body div.content form input[type=button]:hover {
+  background-color: #008000;
+  color: #fbff00;
+}
+
+body div.content form h2 {
+  min-width: 100%;
+  text-align: center;
+}
+
+body div.content form.popup {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  z-index: 100;
+  margin: 0% auto;
+  padding: 20px 10% 30px 10%;
+  max-width: 30%;
+  background-color: #fdfdfd;
+  -webkit-box-shadow: 0 0 30px 5px #3a3939;
+          box-shadow: 0 0 30px 5px #3a3939;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 1080px) {
+  form.popup {
+    max-width: none;
+    min-width: 30%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

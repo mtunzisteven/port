@@ -40,6 +40,10 @@ function homeload() {
                     {
                         label: 'Week10',
                         url: 'week10/index.html'
+                    },
+                    {
+                        label: 'notes',
+                        url: 'notes/index.html'
                     }
     ];
 

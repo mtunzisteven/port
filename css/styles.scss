@@ -1,0 +1,274 @@
+/*
+*---------------------------------Website Colors
+*/
+$main-color: #008000;
+$secondary-color: #fbff00;
+$tertiary-color:#80a1d1;
+$background-color:#fdfdfd;
+$darker-background-color:#d8d5d5;
+$dark-background-color:#f0f0f0;
+$dark-color: #3a3939;
+$light-dark-color: #929292;
+$box-shadow:1px 2px 12px 2px $dark_color;
+$light-box-shadow: 0 0 10px 1px $darker-background-color;
+
+/*
+*---------------------------------Fonts
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto:wght@300&family=Zen+Tokyo+Zoo&display=swap');
+
+$h1 : 500 35px 'Zen Tokyo Zoo', cursive;
+$h2 : 400 30px 'Indie Flower', cursive;
+$h3 : 400 25px 'Indie Flower', cursive;
+$h4 : 400 20px 'Zen Tokyo Zoo', cursive;
+$p  : 200 15px 'Roboto', sans-serif;
+$button  : 200 15px 'Roboto', sans-serif;
+$notices  : 200 20px 'Roboto', sans-serif;
+
+@mixin colflex(){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin rowflex(){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+body{
+
+    & a{
+        text-decoration: none;
+        font:$p;
+    }
+
+    font: $p;
+    color:#3a3939;
+    margin: 0;
+
+    & div.header{
+        @include colflex();
+
+        & div#hero{
+            min-height: 350px;
+            min-width: 100%;
+        }
+
+        & nav{
+            @include rowflex();
+            background-color: $main-color;
+            color: $background-color;
+            padding: 5px 10px;
+            height: 40px;
+
+            & a.logo-text{
+                display: block;
+                font: $h1;
+                min-width: 20%;
+                text-align: left;
+                color: $secondary-color;
+                text-shadow: 0 1px $dark-color;
+            }
+
+            & ul{
+                @include rowflex();
+                min-width: 10%;
+                padding: 0 70% 0 0;
+                margin: 0;
+
+                & li{
+                    list-style: none;
+
+                    & a{
+                        display: block;
+                        color: $secondary-color;
+                        line-height: 40px;
+                    }
+
+                    & a:hover{
+                        color: $background-color;
+                    }
+                    & a.active{
+                        color: $background-color;
+                    }
+                }
+            }
+    
+        }
+
+    }
+
+    & div.content{
+        @include colflex();
+
+        & div.notes-container{
+            @include rowflex();
+            justify-content: center;
+            flex-wrap: wrap;
+            min-width: 100%;
+                    
+            & div.note-card{
+                @include colflex();
+                border-radius: 3px;
+                box-shadow: 0 0 5px 0 $dark-color;
+                min-width: 20%;
+                max-width: 21%;
+                padding: 15px;
+                margin:20px;
+
+                & div.notes{
+                    font: $p;
+                    color: $dark-color;
+                    text-align: center;
+                    margin: 10px 0 0 0;
+
+                }
+
+                & h4.titles{
+                    font: $h2;
+                    text-align: center;
+                    margin: 5px 0 0 0;
+
+                }
+            }
+
+
+        }
+
+
+        & .hidden{
+            display:none;
+        }
+
+        & h1{
+            text-align: center;
+        }
+
+        & div.welcome-buttons{
+            @include rowflex();
+            min-width: 250px;
+            max-width: 250px;
+            margin: 20px auto;
+            padding: 100px;
+            border-radius: 3px;
+            border: 1px solid $main-color;
+
+            & button{
+                padding: 10px 20px;
+                background-color: $main-color;
+                font: $p;
+                font-weight: 700;
+                border: none;
+                border-radius: 3px;
+                color: $secondary-color;
+                box-shadow: 0 0 5px 1px $darker-background-color;
+                cursor: pointer;
+            }
+
+            & button:hover{
+                background-color: $secondary-color;
+                color: $main-color;
+
+            }
+        }
+
+        & div.welcome-buttons.signout{
+
+            border:none;
+            padding: 0 100px;
+
+            & button{
+                margin: 20px auto;
+            }
+
+        }
+
+        & div.welcome-buttons.signout:hover{
+            
+            border:none;
+
+        }
+
+        & div.welcome-buttons:hover{
+            border: 1px solid $main-color;
+        }
+
+        & form{
+            @include colflex();
+            max-width: 50%;
+            margin: 10px auto;
+
+            & i.fa{
+                min-width: 100%;
+                text-align: right;
+                color: $main-color;
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            & i.fa:hover{
+                color: $secondary-color;
+            }
+
+            & label{
+                @include colflex();
+                margin-top: 15px;
+            }
+
+            & input[type=button]{
+                background-color: $secondary-color;
+                color: $main-color;
+                font: $p;
+                font-weight: 600;
+                border: none;
+                max-width: 250px;
+                border-radius: 5px;
+                margin: 40px auto 0 auto;
+                padding: 5px 20px;
+                box-shadow:0 0 3px 1px $dark-color;
+                cursor: pointer;
+            }
+
+            & input[type=button]:hover{
+                background-color: $main-color;
+                color: $secondary-color;
+            }
+
+
+            & h2{
+                min-width: 100%;
+                text-align: center;
+            }
+        }
+
+        & form.popup{
+            position: absolute;
+            top: 20%;
+            left: 25%;
+            z-index: 100;
+            margin: 0% auto;
+            padding: 20px 10% 30px 10%;
+            max-width: 30%;
+            background-color: $background-color;
+            box-shadow:0 0 30px 5px $dark-color;
+        }
+    }
+}
+
+.hidden{
+    display:none;
+}
+
+@media only screen and (min-width: 1080px){
+
+    & form.popup{
+
+        max-width: none;
+        min-width: 30%;
+
+    }
+
+}
