@@ -19,8 +19,6 @@ export function signin(username,hideEl, showEl, inDivs, newNote){
         }
         throw Error(response.statusText);
     })
-    /*.then(response=>response.text())
-    .then(text=> alert(text))*/
     .then(response=>response.json())
     .then(data=> {
 
@@ -72,8 +70,6 @@ export function signup(username, hideEl, infoDiv){
         }
         throw Error(response.statusText);
     })
-    /*.then(response=>response.text())
-    .then(text=> alert(text))*/
     .then(response=>response.json())
     .then(data=> {
 
@@ -122,8 +118,6 @@ export function addnote(note, title, username, infoDiv){
         }
         throw Error(response.statusText);
     })
-    /*.then(response=>response.text())
-    .then(text=> alert(text))*/
     .then(response=>response.json())
     .then(data=> {
 
@@ -146,15 +140,13 @@ export function addnote(note, title, username, infoDiv){
 
 export function quoter(heroText, author){
 
-    fetch(quoteurl,{type:'opaque'})
+    fetch(quoteurl,{type:'cors'})
     .then(response=>{
         if(response.ok){
             return response;
         }
         throw Error(response.statusText);
     })
-    /*.then(response=>response.text())
-    .then(text=> alert(text))*/
     .then(response=>response.json())
     .then(data=> {
     
