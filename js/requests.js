@@ -1,4 +1,4 @@
-let url = "/notes/jsoncontroller.php";
+let url = "/https://zalisting.com";
 
 let quoteurl = "https://zenquotes.io/api/random";
 
