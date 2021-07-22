@@ -1,6 +1,6 @@
-let url = "/https://zalisting.com";
+let url = "/notes/jsoncontroller.php";
 
-let quoteurl = "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
+let quoteurl = "https://zenquotes.io/api/random";
 
 export function signin(username,hideEl, showEl, inDivs, newNote){
 
@@ -140,7 +140,7 @@ export function addnote(note, title, username, infoDiv){
 
 export function quoter(heroText, author){
 
-    fetch(quoteurl,{type:'cors'})
+    fetch(quoteurl,{type:'opaque'})
     .then(response=>{
         if(response.ok){
             return response;
@@ -150,8 +150,8 @@ export function quoter(heroText, author){
     .then(response=>response.json())
     .then(data=> {
     
-        heroText.innerHTML = data['quoteText'];
-        author.innerHTML = data['quoteAuthor'];
+        heroText.innerHTML = data['q'];
+        author.innerHTML = data['a'];
 
     })
     .catch(error => {
