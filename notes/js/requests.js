@@ -1,6 +1,6 @@
 let url = "/notes/jsoncontroller.php";
 
-let quoteurl = "https://zenquotes.io/api/random";
+let random = Math.floor(Math.random() * 11);
 
 export function signin(username,hideEl, showEl, inDivs, newNote){
 
@@ -140,20 +140,23 @@ export function addnote(note, title, username, infoDiv){
 
 export function quoter(heroText, author){
 
-    fetch(quoteurl,{type:'opaque'})
-    .then(response=>{
-        if(response.ok){
-            return response;
+    fetch("https://andruxnet-random-famous-quotes.p.rapidapi.com/?count=10&cat=famous", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "7d9229cc24msh958e0dd8f82ab47p19f340jsn986b57c945d4",
+            "x-rapidapi-host": "andruxnet-random-famous-quotes.p.rapidapi.com"
         }
-        throw Error(response.statusText);
     })
     .then(response=>response.json())
     .then(data=> {
-    
-        heroText.innerHTML = data['q'];
-        author.innerHTML = data['a'];
+
+        heroText.innerHTML = data[random]['quote'];
+        author.innerHTML = data[random]['auto'];
+
 
     })
-    .catch(error => {
-        console.log(error); })
+    .catch(err => {
+        console.error(err);
+    });
+
 }
