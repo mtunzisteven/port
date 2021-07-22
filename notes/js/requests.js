@@ -150,8 +150,8 @@ export function quoter(heroText, author){
     .then(response=>response.json())
     .then(data=> {
     
-        heroText.innerHTML = data['q'];
-        author.innerHTML = data['a'];
+        heroText.innerHTML = data['quoteText'];
+        author.innerHTML = data['quoteAuthor'];
 
     })
     .catch(error => {
